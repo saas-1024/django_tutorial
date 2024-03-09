@@ -30,23 +30,17 @@ INSTALLED_APPS += [
     'django_filters',
     'corsheaders',
     'djoser',
-    'phonenumber_field',
-    'django_generate_series',
 ]
 
-# apps
+# apps made by yourself
 INSTALLED_APPS += [
     'api',
-    'common',
-    'users',
-    'breaks',
-    'organisations',
 ]
 
 # Custom user model
-AUTH_USER_MODEL = 'users.User'
+# AUTH_USER_MODEL = 'users.User'
 # Custom backend
-AUTHENTICATION_BACKENDS = ('users.backends.AuthBackend',)
+# AUTHENTICATION_BACKENDS = ('users.backends.AuthBackend',)
 
 # after apps
 INSTALLED_APPS += [
@@ -62,7 +56,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
-    'crum.CurrentRequestUserMiddleware',
+    # 'crum.CurrentRequestUserMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -83,7 +77,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'config.wsgi.application'
+# WSGI_APPLICATION = 'config.wsgi.application'
 
 
 DATABASES = {
@@ -122,7 +116,7 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
-    'DEFAULT_PAGINATION_CLASS': 'common.pagination.BasePagination',
+    # 'DEFAULT_PAGINATION_CLASS': 'common.pagination.BasePagination',
 }
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -144,7 +138,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 ######################
 # LOCALIZATION
 ######################
-LANGUAGE_CODE = 'en-EN'
+LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
@@ -181,8 +175,8 @@ SPECTACULAR_SETTINGS = {
     ],
 
     'SERVE_AUTHENTICATION': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
         'rest_framework.authentication.BasicAuthentication',
-
     ],
 
     'SWAGGER_UI_SETTINGS': {
