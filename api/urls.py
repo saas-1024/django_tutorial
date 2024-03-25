@@ -1,4 +1,4 @@
-from api.spectacular.urls import urlpatterns as doc_urls
+from api.spectacular_app.urls import urlpatterns as doc_urls
 from django.urls import path, include
 
 app_name = 'api'
@@ -8,3 +8,4 @@ urlpatterns = [
 ]
 
 urlpatterns += doc_urls
+# urlpatterns += users_urls

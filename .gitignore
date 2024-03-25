@@ -159,9 +159,12 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 /requirements.txt
-*/migrations/
+#*/migrations/
 media/
 /media/
 */media/
-/api/migrations/
-/api/__init__.py
+#/api/migrations/
+#/api/__init__.py
+
+*/migrations/*
+!*/migrations/__init__.py
